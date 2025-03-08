@@ -3,7 +3,7 @@ import { Card } from "antd";
 import "./About.scss";
 import UniversityLogo from "../../Assets/Images/srtmun-logo.png";
 import BoardLogo from "../../Assets/Images/board-logo.png";
-import { useDarkMode } from "../../DarkModeContext"; // Import dark mode context
+import { useDarkMode } from "../../DarkModeContext";  // Import the custom hook
 
 const educationData = [
   {
@@ -38,7 +38,7 @@ const achievements = [
 ];
 
 const About = () => {
-  const { isDarkMode } = useDarkMode(); // Get the current dark mode state
+  const { isDarkMode } = useDarkMode();  // Use the custom hook to get dark mode state
 
   return (
     <div id="about" className={`aboutContainer ${isDarkMode ? "dark" : "light"}`}>

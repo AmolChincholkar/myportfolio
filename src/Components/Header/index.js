@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import {
-  MenuOutlined,
-  DownloadOutlined,
-  SunOutlined,
-  MoonOutlined,
-} from "@ant-design/icons";
+import React, { useState, useEffect } from "react";
+import { MenuOutlined, DownloadOutlined, SunOutlined, MoonOutlined } from "@ant-design/icons";
 import { Drawer, Button } from "antd";
 import "./Header.scss";
-import { useDarkMode } from "../../DarkModeContext";
+import { useDarkMode } from "../../DarkModeContext"; // Make sure you're using this context
 import MyLogo from "../../Assets/Images/mylogo.png";
 
 const Header = () => {
@@ -18,16 +13,24 @@ const Header = () => {
   const showDrawer = () => setIsDrawerVisible(true);
   const closeDrawer = () => setIsDrawerVisible(false);
 
-  // Scroll to section function
+  // Set initial active item from localStorage or default to an empty string
+  useEffect(() => {
+    const savedActiveItem = localStorage.getItem("activeItem");
+    if (savedActiveItem) {
+      setActiveItem(savedActiveItem);
+    }
+  }, []);
+
   const handleScrollToSection = (id) => {
     setActiveItem(id);
+    localStorage.setItem("activeItem", id);  // Store active item in localStorage
+
     setTimeout(() => {
       const element = document.getElementById(id);
       const header = document.querySelector(".sticky-header");
       if (element && header) {
         const headerHeight = header.offsetHeight || 80;
-        const top =
-          element.getBoundingClientRect().top + window.scrollY - headerHeight;
+        const top = element.getBoundingClientRect().top + window.scrollY - headerHeight;
         window.scrollTo({ top, behavior: "smooth" });
         window.history.pushState(null, null, `#${id}`);
       }
@@ -75,7 +78,9 @@ const Header = () => {
 
   return (
     <header className={`sticky-header ${isDarkMode ? "dark" : "light"}`}>
-      <div className={isDarkMode ? "white-logo" : "logo"}>
+      <div 
+       onClick={() => handleScrollToSection("home")}
+      className={isDarkMode ? "white-logo" : "logo"}>
         <img src={MyLogo} alt="Logo" className="logo" />
       </div>
       <nav className="desktop-menu">{menuItems}</nav>
