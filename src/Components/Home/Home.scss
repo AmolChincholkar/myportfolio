@@ -1,0 +1,90 @@
+.home-page {
+  padding: 80px 50px 80px 50px;
+  text-align: left;
+  background: #fff; // Light background by default
+  transition: background-color 0.3s, color 0.3s; // Smooth transition for dark mode
+
+  .description {
+    font-size: 22px;
+    color: grey;
+    line-height: 40px;
+    transition: color 0.3s; // Smooth transition for text color
+  }
+
+  .home-img {
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 45px;
+    font-weight: 600;
+    transition: color 0.3s; // Smooth transition for name color
+  }
+
+  .waveEmoji {
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-name: wave;
+    display: inline-block;
+    transform-origin: 70% 70%;
+    
+    img {
+      height: 1em;
+      width: 1em;
+      margin: 0px 0.05em 0px 0.2em;
+      vertical-align: -0.1em;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    15% {
+      transform: rotate(14deg);
+    }
+    30% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(14deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  // Dark mode styles
+  &.dark {
+    background-color: #121212;  // Dark background
+    color: white;  // White text for dark mode
+
+    .description {
+      color: #bbb;  // Lighter text for description in dark mode
+    }
+
+    .name {
+      color: #d946ef;  // Set a custom color for name in dark mode
+    }
+  }
+
+  // Light mode styles (default)
+  &.light {
+    background-color: #fff;  // Light background
+    color: #333;  // Dark text for light mode
+
+    .description {
+      color: grey;  // Default description color
+    }
+
+    .name {
+      color: #6b21a8;  // Default name color
+    }
+  }
+}

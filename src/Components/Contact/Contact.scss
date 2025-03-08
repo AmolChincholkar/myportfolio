@@ -1,0 +1,109 @@
+.contact-page {
+  // padding: 50px;
+  text-align: center;
+  
+  .custom-footer {
+    background-color: #80808017;
+    // background-color: #fff; // Light mode background
+    color: #333; // Light text color
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+
+    .heading-text.title {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      p {
+        font-size: 1.1rem;
+        margin: 10px 0;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      a {
+        font-size: 2rem;
+        margin: 0 10px;
+        color: #333;
+        transition: color 0.3s;
+      }
+      a:hover {
+        color: #007bff;
+      }
+    }
+
+    .copyright {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  }
+
+  // Dark Mode styles
+  &.dark {
+    .custom-footer {
+      background-color: #333; // Dark mode background
+      color: #fff; // Light text color
+
+      .contact-info {
+        p {
+          color: #bbb; // Light color for text in dark mode
+        }
+        a {
+          color: #66ccff; // Lighter color for links in dark mode
+        }
+      }
+
+      .social-icons {
+        a {
+          color: #fff; // White color for icons in dark mode
+        }
+        a:hover {
+          color: #66ccff; // Change icon color on hover in dark mode
+        }
+      }
+
+      .copyright {
+        color: #aaa; // Lighter copyright text in dark mode
+      }
+    }
+  }
+
+  // Light Mode styles
+  &.light {
+    .custom-footer {
+      // background-color: #fff; // Light mode background
+      color: #333; // Dark text color
+
+      .contact-info {
+        p {
+          color: #333; // Dark text for light mode
+        }
+        a {
+          color: #007bff; // Dark blue color for links
+        }
+      }
+
+      .social-icons {
+        a {
+          color: #333; // Dark color for icons in light mode
+        }
+        a:hover {
+          color: #007bff; // Blue icon color on hover in light mode
+        }
+      }
+
+      .copyright {
+        color: #777; // Darker gray color for copyright text
+      }
+    }
+  }
+}

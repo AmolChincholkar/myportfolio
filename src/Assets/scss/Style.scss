@@ -1,0 +1,22 @@
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.heading-text {
+  background: linear-gradient(90deg, #f92cd1, #6e4ce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.title {
+  font-size: 30px;
+  text-align: center;
+  padding: 50px;
+  font-weight: bold;
+}

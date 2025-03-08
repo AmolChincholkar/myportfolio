@@ -1,0 +1,125 @@
+/* Base styles for the header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Light mode styles */
+  &.light {
+    background-color: white;
+    color: #333;
+  }
+
+  /* Dark mode styles */
+  &.dark {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-bottom: 0px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #d946ef;
+      }
+
+      .active {
+        color: #d946ef;
+      }
+    }
+
+    .icon-button {
+      background: #6b21a8;
+      border: none;
+
+      &:hover {
+        background: #4c1d95;
+      }
+    }
+  }
+
+  .mobile-menu-button {
+    display: none;
+    color: white;
+    border: none;
+    background: transparent;
+  }
+  .dark-mode-btn {
+    .ant-btn.ant-btn-circle.ant-btn {
+      background-color: transparent;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .white-logo, .logo {
+    height: 60px;
+    width: 80px;
+  }
+  .white-logo {
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+
+  .ant-btn-icon {
+    color: black;
+    font-size: 24px;
+  }
+}
+
+/* Button styles for Dark Mode toggle */
+.dark-mode-toggle {
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #d946ef;
+  }
+
+  &.dark {
+    color: #fff;
+  }
+
+  &.light {
+    color: #333;
+  }
+}

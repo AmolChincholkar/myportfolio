@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter } from "react-router-dom"; // Use HashRouter
+import { DarkModeProvider } from "./DarkModeContext"; // Import the provider
+import reportWebVitals from "./reportWebVitals";
+import "./Assets/scss/Style.scss";
+import "antd/dist/reset.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
+import Skills from "./Components/Skills";
+import About from "./Components/About";
+import Experience from "./Components/Experience";
+import Contact from "./Components/Contact";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <DarkModeProvider>  {/* Wrap the entire app with DarkModeProvider */}
+      <HashRouter>
+        <Header />
+        <Home />
+        <Skills />
+        <About />
+        <Experience />
+        <Contact />
+      </HashRouter>
+    </DarkModeProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
